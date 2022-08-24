@@ -83,22 +83,24 @@ EventHandler.prototype.getSummary = function () {
 
 }
 
-
+// Array Prototyping
 
 Array.prototype.getEventsBetweenDates = function (start, end) {
-    EventHandler.getEventsBetweenDates.call(this, start, end);
-    return this;
+    const hand = new EventHandler(this);
+    return hand.getEventsBetweenDates(start, end);
 }
 
 Array.prototype.getByMonth = function (month) {
-    return EventHandler.getByMonth.call(this, month);
+    const hand = new EventHandler(this);
+    return hand.getByMonth(month);
 }
 
 Array.prototype.getUniqueDateAndSort = function () {
-    EventHandler.getUniqueDateAndSort.call(this);
-    return this;    
+    const hand = new EventHandler(this);
+    return hand.getUniqueDateAndSort();   
 }
 
 Array.prototype.getSummary = function () {
-    return EventHandler.getSummary;
+    const hand = new EventHandler(this);
+    return hand.getSummary();
 }

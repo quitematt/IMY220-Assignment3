@@ -8,3 +8,34 @@ var events = [
     { name: "Park Picnic", description: "Picnic event in the park", dateStart: "2022/06/12", dateEnd: "2022/06/12" }
 ];
 
+
+var obj = {
+    name: 'Pizza party', description: "Pizza party at work",
+    dateStart: '2022/07/10', dateEnd: '2022/07/10'
+}
+
+var obj2 = {
+    name: 'Burger party', description: "Burger party at work",
+    dateStart: '2022/08/10', dateEnd: '2022/08/11'
+}
+
+var handler = new EventHandler(events);
+
+var result = handler.getEventsBetweenDates("2022/02/01", "2022/02/16");
+
+console.log(result);
+
+result = handler.getByMonth(05);
+console.log(result);
+
+result = handler.getUniqueDateAndSort();
+console.log(result);
+
+result = handler.getSummary([obj, obj2], obj, obj2);
+console.log(result);
+
+result = handler.getSummary();
+console.log(result);
+
+result = handler.getByMonth(06).getSummary();
+console.log(result);
